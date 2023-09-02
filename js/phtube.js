@@ -7,11 +7,22 @@ const handleCategory = async () => {
     data.data.forEach((category) => {
     const div = document.createElement('div');
     div.innerHTML= `
-    <a class="tab btn btn-active">${category.category}</a> 
+    <a onclick="handleClick('${category.category_id}')" class="tab btn btn-active ">${category.category}</a> 
     `    
     categoryContainer.appendChild(div);
+    console.log(category);
+
     });
-    console.log(data.data[0].category);
+
+}
+// data load based on category
+
+const handleClick= async(categoryId)=>{
+    const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
+
+    const data = await response.json();
+    
+    console.log(data.data);
 }
 
  
