@@ -27,13 +27,16 @@ const handleClick= async(categoryId)=>{
     data.data.forEach((card) => {
         const div = document.createElement('div');
         div.innerHTML = `
-        <div class="card w-48 bg-base-100 shadow-xl">
+        <div class="card w-60 h-80 bg-base-100 shadow-xl">
         <figure><img src="${card.thumbnail}" alt="Shoes" /></figure>
+        <div class="bg-black text-white">
+            <p id="time"></p>
+        </div>
         <div class="card-body flex flex-row">
             <div><img src="${card.authors[0].profile_picture}" alt="profile" class="h-10 w-10 rounded-full"></div>
             <div>
                 <h2 class="card-title">
-                    Shoes!
+                    ${card.title}
                   </h2>
                   <p class="text-sm font-normal text-[#171717] opacity-70">${card.authors[0].profile_name}</p>
                   <p class="text-sm font-normal text-[#171717] opacity-70">${card.others.views} views</p>        
@@ -41,12 +44,24 @@ const handleClick= async(categoryId)=>{
         </div>
         </div>
         `
-        console.log(card);
+        // console.log(card.others.posted_date);
+
+        // // convert time 
+        // const postedDate = card.others.posted_date;
+        // function convertSeconds(seconds) {
+        //     const hours = Math.floor(seconds / 3600);
+        //     const minutes = Math.floor((seconds % 3600) / 60);
+        //     console.log(hours +' hours'+ minutes +' minutes ago')
+        //   }
+        // //   const time = document.getElementById('time');
+        //   const timeText = convertSeconds(postedDate);
+        //   document.getElementById('').textContent = timeText;
+
+
         cardContainer.appendChild(div);
     });
-
-    // console.log(data.data[0].authors[0].profile_picture);
 }
 
  
 handleCategory();
+handleClick("1000")
