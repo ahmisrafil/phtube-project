@@ -1,11 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-    <p>welcome to blog</p>
+    <div class="text-center m-10 bg-fuchsia-200 p-10 rounded-xl">
+        <h3 class="font-bold text-2xl">Welcome To Blog</h3>
+    </div>
+
+    <div class="mx-10 my-10 bg-blue-200 p-4 rounded-lg">
+        <h3 class="text-base font-semibold">Q1. Discuss the scope of var, let, and const.</h3>
+        <p>
+            <span class="font-semibold underline">Answer: </span>
+            In JavaScript, var, let, and const are used for variable declaration and have different scopes and
+            behaviors. Understanding their scope is crucial for writing clean and predictable code.
+        </p>
+        <br>
+        <p class="text-base font-semibold">Var:</p>
+        <ul class="list-disc ml-10">
+            <li>Var has function-level scope, meaning it is only accessible within the function where it's declared or
+                globally if declared outside of any function.</li>
+            <li>Variables declared with var are hoisted to the top of their containing function or global scope, which
+                means they are initialized with undefined before the code execution.</li>
+            <li>It's generally considered less safe and less predictable compared to let and const because of its
+                hoisting and lack of block-level scoping.</li>
+        </ul>
+        <br>
+        <p class="text-base font-semibold">Let :</p>
+        <ul class="list-disc ml-10">
+            <li>Let has block-level scope, meaning it's only accessible within the block (e.g., inside loops,
+                conditionals, and functions).
+            </li>
+            <li>Variables declared with let are also hoisted but are not initialized, so they remain in a "temporal dead
+                zone" until they are declared.</li>
+            <li>Unlike var, redeclaring a variable with let in the same scope is not allowed and results in a syntax
+                error.</li>
+        </ul>
+        <br>
+        <p class="text-base font-semibold">Const :</p>
+        <ul class="list-disc ml-10">
+            <li>Const also has block-level scope, just like let.</li>
+            <li>Variables declared with const cannot be reassigned after initialization. However, the value they hold
+                can still be mutated if it's an object or an array.</li>
+            <li>Like let, redeclaring a variable with const in the same scope is not allowed and results in a syntax
+                error.</li>
+        </ul>
+    </div>
+    <div class="mx-10 my-10 bg-green-200 p-4 rounded-lg">
+        <h3 class="text-base font-semibold">Q2. Tell us the use cases of null and undefined.</h3>
+        <p>
+            <span class="font-semibold underline">Answer: </span>
+            In JavaScript, null and undefined are two distinct values that are often used for different purposes.
+            Understanding their use cases is important for writing clean and error-free code.
+        </p>
+        <br>
+        <p class="text-base font-semibold">Undefined :</p>
+        <p>'undefined' represents a variable that has been declared but has not been assigned a value yet. It's also the
+            default value of function parameters that have not been provided with an argument.</p>
+        <br>
+        <p class="text-base font-medium">Use Case :</p>
+        <ul class="list-disc ml-10">
+            <li>When you declare a variable without assigning it a value, it's automatically initialized to undefined.
+            </li>
+            <li>When you access an object property that does not exist, JavaScript returns undefined.</li>
+            <li>Function parameters that are not provided with arguments are also undefined.</li>
+        </ul>
+        <br> <br>
+        <p class="text-base font-semibold">Null :</p>
+        <p>'null' is a deliberate value that represents the absence of any object value or no value at all. It's often
+            used when you want to explicitly indicate that a variable should have no value.</p>
+        <br>
+        <p class="text-base font-medium">Use Case :</p>
+        <ul class="list-disc ml-10">
+            <li>Clearing a variable or object property.</li>
+            <li>Checking if an object property has been intentionally set to a non-value state.</li>
+            <li>As a return value to indicate the absence of a meaningful result or object.</li>
+        </ul>
+    </div>
+    <div class="mx-10 my-10 bg-slate-200 p-4 rounded-lg">
+        <h3 class="text-base font-semibold">Q3. What do you mean by REST API?.</h3>
+        <p>
+            <span class="font-semibold underline">Answer: </span>
+            REST API, which stands for Representational State Transfer Application Programming Interface, is a set of architectural principles and constraints used for designing and interacting with web services. REST is not a protocol but rather a style of designing networked applications, primarily based on the principles outlined by Roy Fielding in his doctoral dissertation in 2000.
+        </p>
+        <p>Key characteristics and principles of RESTful APIs include:</p>
+        <br>
+        <p><span class="text-base font-semibold">Stateless:</span>
+            Each request from a client to a server must contain all the information needed to understand and process the request. The server does not store any client state. This simplifies server design and allows for better scalability.
+        </p>
+        
+        <p><span class="text-base font-semibold">Client-Server:</span>
+            REST separates the client and server, allowing them to evolve independently. Clients are not concerned with data storage, while servers are not concerned with user interfaces. This separation promotes scalability and flexibility.
+        </p>
+        <p><span class="text-base font-semibold">Uniform Interface:</span>
+            RESTful APIs have a consistent and uniform interface that is easy to understand and use. This uniformity is achieved through a set of well-defined constraints, including- Resources, HTTP Methods and Representation.       
+        </p>
+        <p><span class="text-base font-semibold">Resource-Based:</span>
+            REST treats resources as the core abstraction, and each resource is identified by a unique URL. Resources can represent real-world entities (e.g., a user, a product) or abstract concepts (e.g., a session, a configuration).       
+        </p>
+
+
+    </div>
 </body>
+
 </html>
