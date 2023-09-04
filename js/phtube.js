@@ -30,8 +30,6 @@ const handleClick = async (categoryId) => {
         <h3>Oops! Sorry. There is no content here
         </h3>
         </div>
-       
-
         `
         cardContainer.appendChild(div);
     }
@@ -41,7 +39,6 @@ const handleClick = async (categoryId) => {
         const div = document.createElement('div');
         const postedDate = card.others.posted_date;
         const time = convertSeconds(postedDate);
-
 
         div.innerHTML = `
         <div class="card  h-80 bg-base-100 shadow-xl mx-5">
@@ -77,7 +74,6 @@ const handleClick = async (categoryId) => {
         </div>
         `
 
-
         // // convert time 
 
         function convertSeconds(seconds) {
@@ -89,15 +85,9 @@ const handleClick = async (categoryId) => {
             };
 
         }
-
-
-
-
         cardContainer.appendChild(div);
     });
 
 }
-
-
 handleCategory();
 handleClick("1000");
