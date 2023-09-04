@@ -98,13 +98,6 @@ const handleClick = async (categoryId) => {
 
 }
 
-const handleSort = async (categoryId) => {
-    const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
-    const data = await response.json();
-    console.log(data)
-}
-
 
 handleCategory();
 handleClick("1000");
-handleSort();
