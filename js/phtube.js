@@ -22,7 +22,6 @@ const handleClick = async (categoryId) => {
     const data = await response.json();
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
-    console.log(categoryId);
     if (categoryId === '1005') {
         const div = document.createElement('div');
         div.innerHTML = `
@@ -43,8 +42,9 @@ const handleClick = async (categoryId) => {
         const postedDate = card.others.posted_date;
         const time = convertSeconds(postedDate);
 
+
         div.innerHTML = `
-        <div class="card  h-80 bg-base-100 shadow-xl">
+        <div class="card  h-80 bg-base-100 shadow-xl mx-5">
         <figure><img src="${card?.thumbnail}" alt="Shoes" /></figure>
         <div class="bg-black text-white w-1/2 -mt-12 ">
             <p id="time">${time.hours} hrs ${time.minutes} min ago</p>
@@ -98,12 +98,13 @@ const handleClick = async (categoryId) => {
 
 }
 
-const handleSort = async () => {
+const handleSort = async (categoryId) => {
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
     const data = await response.json();
-
+    console.log(data)
 }
 
 
 handleCategory();
 handleClick("1000");
+handleSort();
